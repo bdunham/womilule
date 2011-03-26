@@ -1,2 +1,992 @@
-// Modernizr v1.7  www.modernizr.com
-window.Modernizr=function(a,b,c){function G(){e.input=function(a){for(var b=0,c=a.length;b<c;b++)t[a[b]]=!!(a[b]in l);return t}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" ")),e.inputtypes=function(a){for(var d=0,e,f,h,i=a.length;d<i;d++)l.setAttribute("type",f=a[d]),e=l.type!=="text",e&&(l.value=m,l.style.cssText="position:absolute;visibility:hidden;",/^range$/.test(f)&&l.style.WebkitAppearance!==c?(g.appendChild(l),h=b.defaultView,e=h.getComputedStyle&&h.getComputedStyle(l,null).WebkitAppearance!=="textfield"&&l.offsetHeight!==0,g.removeChild(l)):/^(search|tel)$/.test(f)||(/^(url|email)$/.test(f)?e=l.checkValidity&&l.checkValidity()===!1:/^color$/.test(f)?(g.appendChild(l),g.offsetWidth,e=l.value!=m,g.removeChild(l)):e=l.value!=m)),s[a[d]]=!!e;return s}("search tel url email datetime date month week time datetime-local number range color".split(" "))}function F(a,b){var c=a.charAt(0).toUpperCase()+a.substr(1),d=(a+" "+p.join(c+" ")+c).split(" ");return!!E(d,b)}function E(a,b){for(var d in a)if(k[a[d]]!==c&&(!b||b(a[d],j)))return!0}function D(a,b){return(""+a).indexOf(b)!==-1}function C(a,b){return typeof a===b}function B(a,b){return A(o.join(a+";")+(b||""))}function A(a){k.cssText=a}var d="1.7",e={},f=!0,g=b.documentElement,h=b.head||b.getElementsByTagName("head")[0],i="modernizr",j=b.createElement(i),k=j.style,l=b.createElement("input"),m=":)",n=Object.prototype.toString,o=" -webkit- -moz- -o- -ms- -khtml- ".split(" "),p="Webkit Moz O ms Khtml".split(" "),q={svg:"http://www.w3.org/2000/svg"},r={},s={},t={},u=[],v,w=function(a){var c=b.createElement("style"),d=b.createElement("div"),e;c.textContent=a+"{#modernizr{height:3px}}",h.appendChild(c),d.id="modernizr",g.appendChild(d),e=d.offsetHeight===3,c.parentNode.removeChild(c),d.parentNode.removeChild(d);return!!e},x=function(){function d(d,e){e=e||b.createElement(a[d]||"div");var f=(d="on"+d)in e;f||(e.setAttribute||(e=b.createElement("div")),e.setAttribute&&e.removeAttribute&&(e.setAttribute(d,""),f=C(e[d],"function"),C(e[d],c)||(e[d]=c),e.removeAttribute(d))),e=null;return f}var a={select:"input",change:"input",submit:"form",reset:"form",error:"img",load:"img",abort:"img"};return d}(),y=({}).hasOwnProperty,z;C(y,c)||C(y.call,c)?z=function(a,b){return b in a&&C(a.constructor.prototype[b],c)}:z=function(a,b){return y.call(a,b)},r.flexbox=function(){function c(a,b,c,d){a.style.cssText=o.join(b+":"+c+";")+(d||"")}function a(a,b,c,d){b+=":",a.style.cssText=(b+o.join(c+";"+b)).slice(0,-b.length)+(d||"")}var d=b.createElement("div"),e=b.createElement("div");a(d,"display","box","width:42px;padding:0;"),c(e,"box-flex","1","width:10px;"),d.appendChild(e),g.appendChild(d);var f=e.offsetWidth===42;d.removeChild(e),g.removeChild(d);return f},r.canvas=function(){var a=b.createElement("canvas");return a.getContext&&a.getContext("2d")},r.canvastext=function(){return e.canvas&&C(b.createElement("canvas").getContext("2d").fillText,"function")},r.webgl=function(){return!!a.WebGLRenderingContext},r.touch=function(){return"ontouchstart"in a||w("@media ("+o.join("touch-enabled),(")+"modernizr)")},r.geolocation=function(){return!!navigator.geolocation},r.postmessage=function(){return!!a.postMessage},r.websqldatabase=function(){var b=!!a.openDatabase;return b},r.indexedDB=function(){for(var b=-1,c=p.length;++b<c;){var d=p[b].toLowerCase();if(a[d+"_indexedDB"]||a[d+"IndexedDB"])return!0}return!1},r.hashchange=function(){return x("hashchange",a)&&(b.documentMode===c||b.documentMode>7)},r.history=function(){return !!(a.history&&history.pushState)},r.draganddrop=function(){return x("dragstart")&&x("drop")},r.websockets=function(){return"WebSocket"in a},r.rgba=function(){A("background-color:rgba(150,255,150,.5)");return D(k.backgroundColor,"rgba")},r.hsla=function(){A("background-color:hsla(120,40%,100%,.5)");return D(k.backgroundColor,"rgba")||D(k.backgroundColor,"hsla")},r.multiplebgs=function(){A("background:url(//:),url(//:),red url(//:)");return(new RegExp("(url\\s*\\(.*?){3}")).test(k.background)},r.backgroundsize=function(){return F("backgroundSize")},r.borderimage=function(){return F("borderImage")},r.borderradius=function(){return F("borderRadius","",function(a){return D(a,"orderRadius")})},r.boxshadow=function(){return F("boxShadow")},r.textshadow=function(){return b.createElement("div").style.textShadow===""},r.opacity=function(){B("opacity:.55");return/^0.55$/.test(k.opacity)},r.cssanimations=function(){return F("animationName")},r.csscolumns=function(){return F("columnCount")},r.cssgradients=function(){var a="background-image:",b="gradient(linear,left top,right bottom,from(#9f9),to(white));",c="linear-gradient(left top,#9f9, white);";A((a+o.join(b+a)+o.join(c+a)).slice(0,-a.length));return D(k.backgroundImage,"gradient")},r.cssreflections=function(){return F("boxReflect")},r.csstransforms=function(){return!!E(["transformProperty","WebkitTransform","MozTransform","OTransform","msTransform"])},r.csstransforms3d=function(){var a=!!E(["perspectiveProperty","WebkitPerspective","MozPerspective","OPerspective","msPerspective"]);a&&"webkitPerspective"in g.style&&(a=w("@media ("+o.join("transform-3d),(")+"modernizr)"));return a},r.csstransitions=function(){return F("transitionProperty")},r.fontface=function(){var a,c,d=h||g,e=b.createElement("style"),f=b.implementation||{hasFeature:function(){return!1}};e.type="text/css",d.insertBefore(e,d.firstChild),a=e.sheet||e.styleSheet;var i=f.hasFeature("CSS2","")?function(b){if(!a||!b)return!1;var c=!1;try{a.insertRule(b,0),c=/src/i.test(a.cssRules[0].cssText),a.deleteRule(a.cssRules.length-1)}catch(d){}return c}:function(b){if(!a||!b)return!1;a.cssText=b;return a.cssText.length!==0&&/src/i.test(a.cssText)&&a.cssText.replace(/\r+|\n+/g,"").indexOf(b.split(" ")[0])===0};c=i('@font-face { font-family: "font"; src: url(data:,); }'),d.removeChild(e);return c},r.video=function(){var a=b.createElement("video"),c=!!a.canPlayType;if(c){c=new Boolean(c),c.ogg=a.canPlayType('video/ogg; codecs="theora"');var d='video/mp4; codecs="avc1.42E01E';c.h264=a.canPlayType(d+'"')||a.canPlayType(d+', mp4a.40.2"'),c.webm=a.canPlayType('video/webm; codecs="vp8, vorbis"')}return c},r.audio=function(){var a=b.createElement("audio"),c=!!a.canPlayType;c&&(c=new Boolean(c),c.ogg=a.canPlayType('audio/ogg; codecs="vorbis"'),c.mp3=a.canPlayType("audio/mpeg;"),c.wav=a.canPlayType('audio/wav; codecs="1"'),c.m4a=a.canPlayType("audio/x-m4a;")||a.canPlayType("audio/aac;"));return c},r.localstorage=function(){try{return!!localStorage.getItem}catch(a){return!1}},r.sessionstorage=function(){try{return!!sessionStorage.getItem}catch(a){return!1}},r.webWorkers=function(){return!!a.Worker},r.applicationcache=function(){return!!a.applicationCache},r.svg=function(){return!!b.createElementNS&&!!b.createElementNS(q.svg,"svg").createSVGRect},r.inlinesvg=function(){var a=b.createElement("div");a.innerHTML="<svg/>";return(a.firstChild&&a.firstChild.namespaceURI)==q.svg},r.smil=function(){return!!b.createElementNS&&/SVG/.test(n.call(b.createElementNS(q.svg,"animate")))},r.svgclippaths=function(){return!!b.createElementNS&&/SVG/.test(n.call(b.createElementNS(q.svg,"clipPath")))};for(var H in r)z(r,H)&&(v=H.toLowerCase(),e[v]=r[H](),u.push((e[v]?"":"no-")+v));e.input||G(),e.crosswindowmessaging=e.postmessage,e.historymanagement=e.history,e.addTest=function(a,b){a=a.toLowerCase();if(!e[a]){b=!!b(),g.className+=" "+(b?"":"no-")+a,e[a]=b;return e}},A(""),j=l=null,f&&a.attachEvent&&function(){var a=b.createElement("div");a.innerHTML="<elem></elem>";return a.childNodes.length!==1}()&&function(a,b){function p(a,b){var c=-1,d=a.length,e,f=[];while(++c<d)e=a[c],(b=e.media||b)!="screen"&&f.push(p(e.imports,b),e.cssText);return f.join("")}function o(a){var b=-1;while(++b<e)a.createElement(d[b])}var c="abbr|article|aside|audio|canvas|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video",d=c.split("|"),e=d.length,f=new RegExp("(^|\\s)("+c+")","gi"),g=new RegExp("<(/*)("+c+")","gi"),h=new RegExp("(^|[^\\n]*?\\s)("+c+")([^\\n]*)({[\\n\\w\\W]*?})","gi"),i=b.createDocumentFragment(),j=b.documentElement,k=j.firstChild,l=b.createElement("body"),m=b.createElement("style"),n;o(b),o(i),k.insertBefore(m,k.firstChild),m.media="print",a.attachEvent("onbeforeprint",function(){var a=-1,c=p(b.styleSheets,"all"),k=[],o;n=n||b.body;while((o=h.exec(c))!=null)k.push((o[1]+o[2]+o[3]).replace(f,"$1.iepp_$2")+o[4]);m.styleSheet.cssText=k.join("\n");while(++a<e){var q=b.getElementsByTagName(d[a]),r=q.length,s=-1;while(++s<r)q[s].className.indexOf("iepp_")<0&&(q[s].className+=" iepp_"+d[a])}i.appendChild(n),j.appendChild(l),l.className=n.className,l.innerHTML=n.innerHTML.replace(g,"<$1font")}),a.attachEvent("onafterprint",function(){l.innerHTML="",j.removeChild(l),j.appendChild(n),m.styleSheet.cssText=""})}(a,b),e._enableHTML5=f,e._version=d,g.className=g.className.replace(/\bno-js\b/,"")+" js "+u.join(" ");return e}(this,this.document)
+/*!
+ * Modernizr v1.6
+ * http://www.modernizr.com
+ *
+ * Developed by: 
+ * - Faruk Ates  http://farukat.es/
+ * - Paul Irish  http://paulirish.com/
+ *
+ * Copyright (c) 2009-2010
+ * Dual-licensed under the BSD or MIT licenses.
+ * http://www.modernizr.com/license/
+ */
+
+ 
+/*
+ * Modernizr is a script that detects native CSS3 and HTML5 features
+ * available in the current UA and provides an object containing all
+ * features with a true/false value, depending on whether the UA has
+ * native support for it or not.
+ * 
+ * Modernizr will also add classes to the <html> element of the page,
+ * one for each feature it detects. If the UA supports it, a class
+ * like "cssgradients" will be added. If not, the class name will be
+ * "no-cssgradients". This allows for simple if-conditionals in your
+ * CSS, giving you fine control over the look & feel of your website.
+ * 
+ * @author        Faruk Ates
+ * @author        Paul Irish
+ * @copyright     (c) 2009-2010 Faruk Ates.
+ * @contributor   Ben Alman
+ */
+
+window.Modernizr = (function(window,document,undefined){
+    
+    var version = '1.6',
+
+    ret = {},
+
+    /**
+     * !! DEPRECATED !!
+     * 
+     * enableHTML5 is a private property for advanced use only. If enabled,
+     * it will make Modernizr.init() run through a brief while() loop in
+     * which it will create all HTML5 elements in the DOM to allow for
+     * styling them in Internet Explorer, which does not recognize any
+     * non-HTML4 elements unless created in the DOM this way.
+     * 
+     * enableHTML5 is ON by default.
+     * 
+     * The enableHTML5 toggle option is DEPRECATED as per 1.6, and will be
+     * replaced in 2.0 in lieu of the modular, configurable nature of 2.0.
+     */
+    enableHTML5 = true,
+    
+    
+    docElement = document.documentElement,
+    docHead = document.head || document.getElementsByTagName('head')[0],
+
+    /**
+     * Create our "modernizr" element that we do most feature tests on.
+     */
+    mod = 'modernizr',
+    modElem = document.createElement( mod ),
+    m_style = modElem.style,
+
+    /**
+     * Create the input element for various Web Forms feature tests.
+     */
+    inputElem = document.createElement( 'input' ),
+    
+    smile = ':)',
+    
+    tostring = Object.prototype.toString,
+    
+    // List of property values to set for css tests. See ticket #21
+    prefixes = ' -webkit- -moz- -o- -ms- -khtml- '.split(' '),
+
+    // Following spec is to expose vendor-specific style properties as:
+    //   elem.style.WebkitBorderRadius
+    // and the following would be incorrect:
+    //   elem.style.webkitBorderRadius
+    
+    // Webkit ghosts their properties in lowercase but Opera & Moz do not.
+    // Microsoft foregoes prefixes entirely <= IE8, but appears to 
+    //   use a lowercase `ms` instead of the correct `Ms` in IE9
+    
+    // More here: http://github.com/Modernizr/Modernizr/issues/issue/21
+    domPrefixes = 'Webkit Moz O ms Khtml'.split(' '),
+
+    ns = {'svg': 'http://www.w3.org/2000/svg'},
+
+    tests = {},
+    inputs = {},
+    attrs = {},
+    
+    classes = [],
+    
+    featurename, // used in testing loop
+    
+    
+    
+    // todo: consider using http://javascript.nwbox.com/CSSSupport/css-support.js instead
+    testMediaQuery = function(mq){
+
+      var st = document.createElement('style'),
+          div = document.createElement('div'),
+          ret;
+
+      st.textContent = mq + '{#modernizr{height:3px}}';
+      docHead.appendChild(st);
+      div.id = 'modernizr';
+      docElement.appendChild(div);
+
+      ret = div.offsetHeight === 3;
+
+      st.parentNode.removeChild(st);
+      div.parentNode.removeChild(div);
+
+      return !!ret;
+
+    },
+    
+    
+    /**
+      * isEventSupported determines if a given element supports the given event
+      * function from http://yura.thinkweb2.com/isEventSupported/
+      */
+    isEventSupported = (function(){
+
+      var TAGNAMES = {
+        'select':'input','change':'input',
+        'submit':'form','reset':'form',
+        'error':'img','load':'img','abort':'img'
+      };
+
+      function isEventSupported(eventName, element) {
+
+        element = element || document.createElement(TAGNAMES[eventName] || 'div');
+        eventName = 'on' + eventName;
+
+        // When using `setAttribute`, IE skips "unload", WebKit skips "unload" and "resize", whereas `in` "catches" those
+        var isSupported = (eventName in element);
+
+        if (!isSupported) {
+          // If it has no `setAttribute` (i.e. doesn't implement Node interface), try generic element
+          if (!element.setAttribute) {
+            element = document.createElement('div');
+          }
+          if (element.setAttribute && element.removeAttribute) {
+            element.setAttribute(eventName, '');
+            isSupported = is(element[eventName], 'function');
+
+            // If property was created, "remove it" (by setting value to `undefined`)
+            if (!is(element[eventName], undefined)) {
+              element[eventName] = undefined;
+            }
+            element.removeAttribute(eventName);
+          }
+        }
+
+        element = null;
+        return isSupported;
+      }
+      return isEventSupported;
+    })();
+    
+    
+    // hasOwnProperty shim by kangax needed for Safari 2.0 support
+    var _hasOwnProperty = ({}).hasOwnProperty, hasOwnProperty;
+    if (!is(_hasOwnProperty, undefined) && !is(_hasOwnProperty.call, undefined)) {
+      hasOwnProperty = function (object, property) {
+        return _hasOwnProperty.call(object, property);
+      };
+    }
+    else {
+      hasOwnProperty = function (object, property) { /* yes, this can give false positives/negatives, but most of the time we don't care about those */
+        return ((property in object) && is(object.constructor.prototype[property], undefined));
+      };
+    }
+    
+    /**
+     * set_css applies given styles to the Modernizr DOM node.
+     */
+    function set_css( str ) {
+        m_style.cssText = str;
+    }
+
+    /**
+     * set_css_all extrapolates all vendor-specific css strings.
+     */
+    function set_css_all( str1, str2 ) {
+        return set_css(prefixes.join(str1 + ';') + ( str2 || '' ));
+    }
+
+    /**
+     * is returns a boolean for if typeof obj is exactly type.
+     */
+    function is( obj, type ) {
+        return typeof obj === type;
+    }
+
+    /**
+     * contains returns a boolean for if substr is found within str.
+     */
+    function contains( str, substr ) {
+        return (''+str).indexOf( substr ) !== -1;
+    }
+
+    /**
+     * test_props is a generic CSS / DOM property test; if a browser supports
+     *   a certain property, it won't return undefined for it.
+     *   A supported CSS property returns empty string when its not yet set.
+     */
+    function test_props( props, callback ) {
+        for ( var i in props ) {
+            if ( m_style[ props[i] ] !== undefined && ( !callback || callback( props[i], modElem ) ) ) {
+                return true;
+            }
+        }
+    }
+
+    /**
+     * test_props_all tests a list of DOM properties we want to check against.
+     *   We specify literally ALL possible (known and/or likely) properties on 
+     *   the element including the non-vendor prefixed one, for forward-
+     *   compatibility.
+     */
+    function test_props_all( prop, callback ) {
+      
+        var uc_prop = prop.charAt(0).toUpperCase() + prop.substr(1),
+            props   = (prop + ' ' + domPrefixes.join(uc_prop + ' ') + uc_prop).split(' ');
+
+        return !!test_props( props, callback );
+    }
+    
+
+    /**
+     * Tests
+     */
+
+    tests['flexbox'] = function() {
+        /**
+         * set_prefixed_value_css sets the property of a specified element
+         * adding vendor prefixes to the VALUE of the property.
+         * @param {Element} element
+         * @param {string} property The property name. This will not be prefixed.
+         * @param {string} value The value of the property. This WILL be prefixed.
+         * @param {string=} extra Additional CSS to append unmodified to the end of
+         * the CSS string.
+         */
+        function set_prefixed_value_css(element, property, value, extra) {
+            property += ':';
+            element.style.cssText = (property + prefixes.join(value + ';' + property)).slice(0, -property.length) + (extra || '');
+        }
+
+        /**
+         * set_prefixed_property_css sets the property of a specified element
+         * adding vendor prefixes to the NAME of the property.
+         * @param {Element} element
+         * @param {string} property The property name. This WILL be prefixed.
+         * @param {string} value The value of the property. This will not be prefixed.
+         * @param {string=} extra Additional CSS to append unmodified to the end of
+         * the CSS string.
+         */
+        function set_prefixed_property_css(element, property, value, extra) {
+            element.style.cssText = prefixes.join(property + ':' + value + ';') + (extra || '');
+        }
+
+        var c = document.createElement('div'),
+            elem = document.createElement('div');
+
+        set_prefixed_value_css(c, 'display', 'box', 'width:42px;padding:0;');
+        set_prefixed_property_css(elem, 'box-flex', '1', 'width:10px;');
+
+        c.appendChild(elem);
+        docElement.appendChild(c);
+
+        var ret = elem.offsetWidth === 42;
+
+        c.removeChild(elem);
+        docElement.removeChild(c);
+
+        return ret;
+    };
+    
+    // On the S60 and BB Storm, getContext exists, but always returns undefined
+    // http://github.com/Modernizr/Modernizr/issues/issue/97/ 
+    
+    tests['canvas'] = function() {
+        var elem = document.createElement( 'canvas' );
+        return !!(elem.getContext && elem.getContext('2d'));
+    };
+    
+    tests['canvastext'] = function() {
+        return !!(ret['canvas'] && is(document.createElement( 'canvas' ).getContext('2d').fillText, 'function'));
+    };
+    
+    
+    tests['webgl'] = function(){
+
+        var elem = document.createElement( 'canvas' ); 
+        
+        try {
+            if (elem.getContext('webgl')){ return true; }
+        } catch(e){	}
+        
+        try {
+            if (elem.getContext('experimental-webgl')){ return true; }
+        } catch(e){	}
+
+        return false;
+    };
+    
+    /*
+     * The Modernizr.touch test only indicates if the browser supports
+     *    touch events, which does not necessarily reflect a touchscreen
+     *    device, as evidenced by tablets running Windows 7 or, alas,
+     *    the Palm Pre / WebOS (touch) phones.
+     *    
+     * Additionally, Chrome (desktop) used to lie about its support on this,
+     *    but that has since been rectified: http://crbug.com/36415
+     *    
+     * We also test for Firefox 4 Multitouch Support.
+     *
+     * For more info, see: http://modernizr.github.com/Modernizr/touch.html
+     */
+     
+    tests['touch'] = function() {
+
+        return ('ontouchstart' in window) || testMediaQuery('@media ('+prefixes.join('touch-enabled),(')+'modernizr)');
+
+    };
+
+
+    tests['deviceorientation'] = function() {
+
+        return ('DeviceOrientationEvent' in window);
+
+    };
+
+
+    tests['devicemotion'] = function() {
+
+        return ('DeviceMotionEvent' in window);
+
+    };
+
+
+    /**
+     * geolocation tests for the new Geolocation API specification.
+     *   This test is a standards compliant-only test; for more complete
+     *   testing, including a Google Gears fallback, please see:
+     *   http://code.google.com/p/geo-location-javascript/
+     * or view a fallback solution using google's geo API:
+     *   http://gist.github.com/366184
+     */
+    tests['geolocation'] = function() {
+        return !!navigator.geolocation;
+    };
+
+    // Per 1.6: 
+    // This used to be Modernizr.crosswindowmessaging but the longer
+    // name has been deprecated in favor of a shorter and property-matching one.
+    // The old API is still available in 1.6, but as of 2.0 will throw a warning,
+    // and in the first release thereafter disappear entirely.
+    tests['postmessage'] = function() {
+      return !!window.postMessage;
+    };
+
+    // Web SQL database detection is tricky:
+
+    // In chrome incognito mode, openDatabase is truthy, but using it will 
+    //   throw an exception: http://crbug.com/42380
+    // We can create a dummy database, but there is no way to delete it afterwards. 
+    
+    // Meanwhile, Safari users can get prompted on any database creation.
+    //   If they do, any page with Modernizr will give them a prompt:
+    //   http://github.com/Modernizr/Modernizr/issues/closed#issue/113
+    
+    // We have chosen to allow the Chrome incognito false positive, so that Modernizr
+    //   doesn't litter the web with these test databases. As a developer, you'll have
+    //   to account for this gotcha yourself.
+    tests['websqldatabase'] = function() {
+      var result = !!window.openDatabase;
+      /*
+      if (result){
+        try {
+          result = !!openDatabase( mod + "testdb", "1.0", mod + "testdb", 2e4);
+        } catch(e) {
+        }
+      }
+      */
+      return result;
+    };
+    
+    // Vendors have inconsistent prefixing with the experimental Indexed DB:
+    // - Firefox is shipping indexedDB in FF4 as moz_indexedDB
+    // - Webkit's implementation is accessible through webkitIndexedDB
+    // We test both styles.
+    tests['indexedDB'] = function(){
+      for (var i = -1, len = domPrefixes.length; ++i < len; ){ 
+        var prefix = domPrefixes[i].toLowerCase();
+        if (window[prefix + '_indexedDB'] || window[prefix + 'IndexedDB']){
+          return true;
+        } 
+      }
+      return false;
+    };
+
+    // documentMode logic from YUI to filter out IE8 Compat Mode
+    //   which false positives.
+    tests['hashchange'] = function() {
+      return isEventSupported('hashchange', window) && ( document.documentMode === undefined || document.documentMode > 7 );
+    };
+
+    // Per 1.6: 
+    // This used to be Modernizr.historymanagement but the longer
+    // name has been deprecated in favor of a shorter and property-matching one.
+    // The old API is still available in 1.6, but as of 2.0 will throw a warning,
+    // and in the first release thereafter disappear entirely.
+    tests['history'] = function() {
+      return !!(window.history && history.pushState);
+    };
+
+    tests['draganddrop'] = function() {
+        return isEventSupported('dragstart') && isEventSupported('drop');
+    };
+    
+    tests['websockets'] = function(){
+        return ('WebSocket' in window);
+    };
+    
+    tests['eventsource'] = function(){
+        return ('EventSource' in window);
+    };
+    
+    // http://css-tricks.com/rgba-browser-support/
+    tests['rgba'] = function() {
+        // Set an rgba() color and check the returned value
+        
+        set_css(  'background-color:rgba(150,255,150,.5)' );
+        
+        return contains( m_style.backgroundColor, 'rgba' );
+    };
+    
+    tests['hsla'] = function() {
+        // Same as rgba(), in fact, browsers re-map hsla() to rgba() internally,
+        //   except IE9 who retains it as hsla
+        
+        set_css('background-color:hsla(120,40%,100%,.5)' );
+        
+        return contains( m_style.backgroundColor, 'rgba' ) || contains( m_style.backgroundColor, 'hsla' );
+    };
+    
+    tests['multiplebgs'] = function() {
+        // Setting multiple images AND a color on the background shorthand property
+        //  and then querying the style.background property value for the number of
+        //  occurrences of "url(" is a reliable method for detecting ACTUAL support for this!
+        
+        set_css( 'background:url(//:),url(//:),red url(//:)' );
+        
+        // If the UA supports multiple backgrounds, there should be three occurrences
+        //   of the string "url(" in the return value for elem_style.background
+
+        return new RegExp("(url\\s*\\(.*?){3}").test(m_style.background);
+    };
+    
+    
+    // In testing support for a given CSS property, it's legit to test:
+    //    elem.style[styleName] !== undefined
+    // If the property is supported it will return an empty string,
+    // if unsupported it will return undefined.
+    // We'll take advantage of this quick test and skip setting a style 
+    // on our modernizr element, but instead just testing undefined vs
+    // empty string.
+    // The legacy set_css_all calls will remain in the source 
+    // (however, commented) for clarity, yet functionally they are 
+    // no longer needed.
+    
+
+    tests['backgroundsize'] = function() {
+        return test_props_all( 'backgroundSize' );
+    };
+    
+    tests['borderimage'] = function() {
+        //  set_css_all( 'border-image:url(m.png) 1 1 stretch' );
+        return test_props_all( 'borderImage' );
+    };
+    
+    
+    // Super comprehensive table about all the unique implementations of 
+    // border-radius: http://muddledramblings.com/table-of-css3-border-radius-compliance
+    
+    tests['borderradius'] = function() {
+        //  set_css_all( 'border-radius:10px' );
+        return test_props_all( 'borderRadius', '', function( prop ) {
+            return contains( prop, 'orderRadius' );
+        });
+    };
+    
+    
+    tests['boxshadow'] = function() {
+        //  set_css_all( 'box-shadow:#000 1px 1px 3px' );
+        return test_props_all( 'boxShadow' );
+    };
+    
+    // Note: FF3.0 will false positive on this test 
+    tests['textshadow'] = function(){
+        return document.createElement('div').style.textShadow === '';
+    };
+    
+    
+    tests['opacity'] = function() {
+        // Browsers that actually have CSS Opacity implemented have done so
+        //  according to spec, which means their return values are within the
+        //  range of [0.0,1.0] - including the leading zero.
+        
+        set_css_all( 'opacity:.55' );
+        
+        // The non-literal . in this regex is intentional:
+        //   German Chrome returns this value as 0,55
+        // https://github.com/Modernizr/Modernizr/issues/#issue/59/comment/516632
+        return /^0.55$/.test(m_style.opacity);
+    };
+    
+    
+    tests['cssanimations'] = function() {
+        //  set_css_all( 'animation:"animate" 2s ease 2', 'position:relative' );
+        return test_props_all( 'animationName' );
+    };
+    
+    
+    tests['csscolumns'] = function() {
+        //  set_css_all( 'column-count:3' );
+        return test_props_all( 'columnCount' );
+    };
+    
+    
+    tests['cssgradients'] = function() {
+        /**
+         * For CSS Gradients syntax, please see:
+         * http://webkit.org/blog/175/introducing-css-gradients/
+         * https://developer.mozilla.org/en/CSS/-moz-linear-gradient
+         * https://developer.mozilla.org/en/CSS/-moz-radial-gradient
+         * http://dev.w3.org/csswg/css3-images/#gradients-
+         */
+        
+        var str1 = 'background-image:',
+            str2 = 'gradient(linear,left top,right bottom,from(#9f9),to(white));',
+            str3 = 'linear-gradient(left top,#9f9, white);';
+        
+        set_css(
+            (str1 + prefixes.join(str2 + str1) + prefixes.join(str3 + str1)).slice(0,-str1.length)
+        );
+        
+        return contains( m_style.backgroundImage, 'gradient' );
+    };
+    
+    
+    tests['cssreflections'] = function() {
+        //  set_css_all( 'box-reflect:right 1px' );
+        return test_props_all( 'boxReflect' );
+    };
+    
+    
+    tests['csstransforms'] = function() {
+        //  set_css_all( 'transform:rotate(3deg)' );
+        return !!test_props([ 'transformProperty', 'WebkitTransform', 'MozTransform', 'OTransform', 'msTransform' ]);
+    };
+    
+    
+    tests['csstransforms3d'] = function() {
+        //  set_css_all( 'perspective:500' );
+        
+        var ret = !!test_props([ 'perspectiveProperty', 'WebkitPerspective', 'MozPerspective', 'OPerspective', 'msPerspective' ]);
+        
+        // Webkit’s 3D transforms are passed off to the browser's own graphics renderer.
+        //   It works fine in Safari on Leopard and Snow Leopard, but not in Chrome in
+        //   some conditions. As a result, Webkit typically recognizes the syntax but 
+        //   will sometimes throw a false positive, thus we must do a more thorough check:
+        if (ret && 'webkitPerspective' in docElement.style){
+          
+          // Webkit allows this media query to succeed only if the feature is enabled.    
+          // "@media (transform-3d),(-o-transform-3d),(-moz-transform-3d),(-ms-transform-3d),(-webkit-transform-3d),(modernizr){ ... }"      
+          ret = testMediaQuery('@media ('+prefixes.join('transform-3d),(')+'modernizr)');
+        }
+        return ret;
+    };
+    
+    
+    tests['csstransitions'] = function() {
+        //  set_css_all( 'transition:all .5s linear' );
+        return test_props_all( 'transitionProperty' );
+    };
+
+
+    // @font-face detection routine by Diego Perini
+    // http://javascript.nwbox.com/CSSSupport/
+    tests['fontface'] = function(){
+
+        var 
+        sheet,
+        head = docHead || docElement,
+        style = document.createElement("style"),
+        impl = document.implementation || { hasFeature: function() { return false; } };
+        
+        style.type = 'text/css';
+        head.insertBefore(style, head.firstChild);
+        sheet = style.sheet || style.styleSheet;
+
+        // removing it crashes IE browsers
+        //head.removeChild(style);
+
+        var supportAtRule = impl.hasFeature('CSS2', '') ?
+                function(rule) {
+                    if (!(sheet && rule)) return false;
+                    var result = false;
+                    try {
+                        sheet.insertRule(rule, 0);
+                        result = !(/unknown/i).test(sheet.cssRules[0].cssText);
+                        sheet.deleteRule(sheet.cssRules.length - 1);
+                    } catch(e) { }
+                    return result;
+                } :
+                function(rule) {
+                    if (!(sheet && rule)) return false;
+                    sheet.cssText = rule;
+                    
+                    return sheet.cssText.length !== 0 && !(/unknown/i).test(sheet.cssText) &&
+                      sheet.cssText
+                            .replace(/\r+|\n+/g, '')
+                            .indexOf(rule.split(' ')[0]) === 0;
+                };
+
+
+        // DEPRECATED - allow for a callback
+        ret._fontfaceready = function(fn){
+          fn(ret.fontface);
+        };
+        
+        return supportAtRule('@font-face { font-family: "font"; src: "font.ttf"; }');
+        
+    };
+    
+
+    // These tests evaluate support of the video/audio elements, as well as
+    // testing what types of content they support.
+    //
+    // We're using the Boolean constructor here, so that we can extend the value
+    // e.g.  Modernizr.video     // true
+    //       Modernizr.video.ogg // 'probably'
+    //
+    // Codec values from : http://github.com/NielsLeenheer/html5test/blob/9106a8/index.html#L845
+    //                     thx to NielsLeenheer and zcorpan
+    
+    // Note: in FF 3.5.1 and 3.5.0, "no" was a return value instead of empty string.
+    //   Modernizr does not normalize for that.
+    
+    tests['video'] = function() {
+        var elem = document.createElement('video'),
+            bool = !!elem.canPlayType;
+        
+        if (bool){  
+            bool      = new Boolean(bool);  
+            bool.ogg  = elem.canPlayType('video/ogg; codecs="theora"');
+            
+            // Workaround required for IE9, which doesn't report video support without audio codec specified.
+            //   bug 599718 @ msft connect
+            var h264 = 'video/mp4; codecs="avc1.42E01E';
+            bool.h264 = elem.canPlayType(h264 + '"') || elem.canPlayType(h264 + ', mp4a.40.2"');
+            
+            bool.webm = elem.canPlayType('video/webm; codecs="vp8, vorbis"');
+        }
+        return bool;
+    };
+    
+    tests['audio'] = function() {
+        var elem = document.createElement('audio'),
+            bool = !!elem.canPlayType;
+        
+        if (bool){  
+            bool      = new Boolean(bool);  
+            bool.ogg  = elem.canPlayType('audio/ogg; codecs="vorbis"');
+            bool.mp3  = elem.canPlayType('audio/mpeg;');
+            
+            // Mimetypes accepted: 
+            //   https://developer.mozilla.org/En/Media_formats_supported_by_the_audio_and_video_elements
+            //   http://bit.ly/iphoneoscodecs
+            bool.wav  = elem.canPlayType('audio/wav; codecs="1"');
+            bool.m4a  = elem.canPlayType('audio/x-m4a;') || elem.canPlayType('audio/aac;');
+        }
+        return bool;
+    };
+
+
+    // Both localStorage and sessionStorage are
+    //   tested via the `in` operator because otherwise Firefox will
+    //   throw an error: https://bugzilla.mozilla.org/show_bug.cgi?id=365772
+    //   if cookies are disabled
+    
+    // They require try/catch because of possible firefox configuration:
+    //   http://github.com/Modernizr/Modernizr/issues#issue/92
+    
+    // FWIW miller device resolves to [object Storage] in all supporting browsers
+    //   except for IE who does [object Object]
+    
+    // IE8 Compat mode supports these features completely:
+    //   http://www.quirksmode.org/dom/html5.html
+    
+    tests['localstorage'] = function() {
+        try {
+          return ('localStorage' in window) && window.localStorage !== null;
+        } catch(e) {
+          return false;
+        }
+    };
+
+    tests['sessionstorage'] = function() {
+        try {
+            return ('sessionStorage' in window) && window.sessionStorage !== null;
+        } catch(e){
+            return false;
+        }
+    };
+
+
+    tests['webWorkers'] = function () {
+        return !!window.Worker;
+    };
+
+
+    tests['applicationcache'] =  function() {
+        return !!window.applicationCache;
+    };
+
+ 
+    // Thanks to Erik Dahlstrom
+    tests['svg'] = function(){
+        return !!document.createElementNS && !!document.createElementNS(ns.svg, "svg").createSVGRect;
+    };
+
+    tests['inlinesvg'] = function() {
+      var div = document.createElement('div');
+      div.innerHTML = '<svg/>';
+      return (div.firstChild && div.firstChild.namespaceURI) == ns.svg;
+    };
+
+    // Thanks to F1lt3r and lucideer
+    // http://github.com/Modernizr/Modernizr/issues#issue/35
+    tests['smil'] = function(){
+        return !!document.createElementNS && /SVG/.test(tostring.call(document.createElementNS(ns.svg,'animate')));
+    };
+
+    tests['svgclippaths'] = function(){
+        // Possibly returns a false positive in Safari 3.2?
+        return !!document.createElementNS && /SVG/.test(tostring.call(document.createElementNS(ns.svg,'clipPath')));
+    };
+
+
+    // input features and input types go directly onto the ret object, bypassing the tests loop.
+    // Hold this guy to execute in a moment.
+    function webforms(){
+    
+        // Run through HTML5's new input attributes to see if the UA understands any.
+        // We're using f which is the <input> element created early on
+        // Mike Taylr has created a comprehensive resource for testing these attributes
+        //   when applied to all input types: 
+        //   http://miketaylr.com/code/input-type-attr.html
+        // spec: http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
+        ret['input'] = (function(props) {
+            for (var i = 0, len = props.length; i<len; i++) {
+                attrs[ props[i] ] = !!(props[i] in inputElem);
+            }
+            return attrs;
+        })('autocomplete autofocus list placeholder max min multiple pattern required step'.split(' '));
+
+        // Run through HTML5's new input types to see if the UA understands any.
+        //   This is put behind the tests runloop because it doesn't return a
+        //   true/false like all the other tests; instead, it returns an object
+        //   containing each input type with its corresponding true/false value 
+        
+        // Big thanks to @miketaylr for the html5 forms expertise. http://miketaylr.com/
+        ret['inputtypes'] = (function(props) {
+            for (var i = 0, bool, len=props.length ; i < len ; i++) {
+              
+                inputElem.setAttribute('type', props[i]);
+                bool = inputElem.type !== 'text';
+                
+                // Chrome likes to falsely purport support, so we feed it a textual value;
+                // if that doesnt succeed then we know there's a custom UI
+                if (bool){  
+
+                    inputElem.value = smile;
+     
+                    if (/^range$/.test(inputElem.type) && inputElem.style.WebkitAppearance !== undefined){
+                      
+                      docElement.appendChild(inputElem);
+                      var defaultView = document.defaultView;
+                      
+                      // Safari 2-4 allows the smiley as a value, despite making a slider
+                      bool =  defaultView.getComputedStyle && 
+                              defaultView.getComputedStyle(inputElem, null).WebkitAppearance !== 'textfield' && 
+                      
+                              // Mobile android web browser has false positive, so must
+                              // check the height to see if the widget is actually there.
+                              (inputElem.offsetHeight !== 0);
+                              
+                      docElement.removeChild(inputElem);
+                              
+                    } else if (/^(search|tel)$/.test(inputElem.type)){
+                      // Spec doesnt define any special parsing or detectable UI 
+                      //   behaviors so we pass these through as true
+                      
+                      // Interestingly, opera fails the earlier test, so it doesn't
+                      //  even make it here.
+                      
+                    } else if (/^(url|email)$/.test(inputElem.type)) {
+
+                      // Real url and email support comes with prebaked validation.
+                      bool = inputElem.checkValidity && inputElem.checkValidity() === false;
+                      
+                    } else {
+                      // If the upgraded input compontent rejects the :) text, we got a winner
+                      bool = inputElem.value != smile;
+                    }
+                }
+                
+                inputs[ props[i] ] = !!bool;
+            }
+            return inputs;
+        })('search tel url email datetime date month week time datetime-local number range color'.split(' '));
+
+    }
+
+
+
+    // End of test definitions
+
+
+
+    // Run through all tests and detect their support in the current UA.
+    // todo: hypothetically we could be doing an array of tests and use a basic loop here.
+    for ( var feature in tests ) {
+        if ( hasOwnProperty( tests, feature ) ) {
+            // run the test, throw the return value into the Modernizr,
+            //   then based on that boolean, define an appropriate className
+            //   and push it into an array of classes we'll join later.
+            featurename  = feature.toLowerCase();
+            ret[ featurename ] = tests[ feature ]();
+
+            classes.push( ( ret[ featurename ] ? '' : 'no-' ) + featurename );
+        }
+    }
+    
+    // input tests need to run.
+    if (!ret.input) webforms();
+    
+
+   
+    // Per 1.6: deprecated API is still accesible for now:
+    ret.crosswindowmessaging = ret.postmessage;
+    ret.historymanagement = ret.history;
+
+
+
+    /**
+     * Addtest allows the user to define their own feature tests
+     * the result will be added onto the Modernizr object,
+     * as well as an appropriate className set on the html element
+     * 
+     * @param feature - String naming the feature
+     * @param test - Function returning true if feature is supported, false if not
+     */
+    ret.addTest = function (feature, test) {
+      feature = feature.toLowerCase();
+      
+      if (ret[ feature ]) {
+        return; // quit if you're trying to overwrite an existing test
+      } 
+      test = !!(test());
+      docElement.className += ' ' + (test ? '' : 'no-') + feature; 
+      ret[ feature ] = test;
+      return ret; // allow chaining.
+    };
+
+    /**
+     * Reset m.style.cssText to nothing to reduce memory footprint.
+     */
+    set_css( '' );
+    modElem = f = null;
+
+    // Enable HTML 5 elements for styling in IE. 
+    // fyi: jscript version does not reflect trident version
+    //      therefore ie9 in ie7 mode will still have a jScript v.9
+    if ( enableHTML5 && window.attachEvent && (function(){ var elem = document.createElement("div");
+                                      elem.innerHTML = "<elem></elem>";
+                                      return elem.childNodes.length !== 1; })()) {
+        // iepp v1.6.2 by @jon_neal : code.google.com/p/ie-print-protector
+        (function(win, doc) {
+          var elems = 'abbr|article|aside|audio|canvas|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video',
+            elemsArr = elems.split('|'),
+            elemsArrLen = elemsArr.length,
+            elemRegExp = new RegExp('(^|\\s)('+elems+')', 'gi'), 
+            tagRegExp = new RegExp('<(\/*)('+elems+')', 'gi'),
+            ruleRegExp = new RegExp('(^|[^\\n]*?\\s)('+elems+')([^\\n]*)({[\\n\\w\\W]*?})', 'gi'),
+            docFrag = doc.createDocumentFragment(),
+            html = doc.documentElement,
+            head = html.firstChild,
+            bodyElem = doc.createElement('body'),
+            styleElem = doc.createElement('style'),
+            body;
+          function shim(doc) {
+            var a = -1;
+            while (++a < elemsArrLen)
+              // Use createElement so IE allows HTML5-named elements in a document
+              doc.createElement(elemsArr[a]);
+          }
+          function getCSS(styleSheetList, mediaType) {
+            var a = -1,
+              len = styleSheetList.length,
+              styleSheet,
+              cssTextArr = [];
+            while (++a < len) {
+              styleSheet = styleSheetList[a];
+              // Get css from all non-screen stylesheets and their imports
+              if ((mediaType = styleSheet.media || mediaType) != 'screen') cssTextArr.push(getCSS(styleSheet.imports, mediaType), styleSheet.cssText);
+            }
+            return cssTextArr.join('');
+          }
+          // Shim the document and iepp fragment
+          shim(doc);
+          shim(docFrag);
+          // Add iepp custom print style element
+          head.insertBefore(styleElem, head.firstChild);
+          styleElem.media = 'print';
+          win.attachEvent(
+            'onbeforeprint',
+            function() {
+              var a = -1,
+                cssText = getCSS(doc.styleSheets, 'all'),
+                cssTextArr = [],
+                rule;
+              body = body || doc.body;
+              // Get only rules which reference HTML5 elements by name
+              while ((rule = ruleRegExp.exec(cssText)) != null)
+                // Replace all html5 element references with iepp substitute classnames
+                cssTextArr.push((rule[1]+rule[2]+rule[3]).replace(elemRegExp, '$1.iepp_$2')+rule[4]);
+              // Write iepp custom print CSS
+              styleElem.styleSheet.cssText = cssTextArr.join('\n');
+              while (++a < elemsArrLen) {
+                var nodeList = doc.getElementsByTagName(elemsArr[a]),
+                  nodeListLen = nodeList.length,
+                  b = -1;
+                while (++b < nodeListLen)
+                  if (nodeList[b].className.indexOf('iepp_') < 0)
+                    // Append iepp substitute classnames to all html5 elements
+                    nodeList[b].className += ' iepp_'+elemsArr[a];
+              }
+              docFrag.appendChild(body);
+              html.appendChild(bodyElem);
+              // Write iepp substitute print-safe document
+              bodyElem.className = body.className;
+              // Replace HTML5 elements with <font> which is print-safe and shouldn't conflict since it isn't part of html5
+              bodyElem.innerHTML = body.innerHTML.replace(tagRegExp, '<$1font');
+            }
+          );
+          win.attachEvent(
+            'onafterprint',
+            function() {
+              // Undo everything done in onbeforeprint
+              bodyElem.innerHTML = '';
+              html.removeChild(bodyElem);
+              html.appendChild(body);
+              styleElem.styleSheet.cssText = '';
+            }
+          );
+        })(window, document);
+    }
+
+    // Assign private properties to the return object with prefix
+    ret._enableHTML5     = enableHTML5;
+    ret._version         = version;
+
+    // Remove "no-js" class from <html> element, if it exists:
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + ' js';
+
+    // Add the new classes to the <html> element.
+    docElement.className += ' ' + classes.join( ' ' );
+    
+    return ret;
+
+})(this,this.document);

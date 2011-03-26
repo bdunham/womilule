@@ -4,7 +4,9 @@
 <div id="compass"></div>
 
 <script type="text/javascript">
-window.addEventListener("deviceorientation", function(event) {
-  $('#compass').html(Math.round(event.alpha));
-}, true);
+if (Modernizr.deviceorientation) {
+  window.addEventListener("deviceorientation", function(event) {
+    $('#compass').html(Math.round(event.alpha));
+  }, true);
+}
 </script>

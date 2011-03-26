@@ -10,7 +10,6 @@ if (Modernizr.geolocation) {
 
 function getPoints(position)
 {
-  
   $.getJSON('/category/points_json/<%= params[:id] %>', { 'lat': position.coords.latitude, 'long': position.coords.longitude }, function(data){
     $('ul#points').html('');
     for (var i=0; i<data.length; i++)
